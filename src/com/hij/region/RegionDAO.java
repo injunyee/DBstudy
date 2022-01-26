@@ -4,15 +4,15 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import com.hij.connection.DBCoonector;
+import com.hij.connection.DBConnector;
 
 public class RegionDAO
 {
-private DBCoonector dbCoonector;
+private DBConnector dbCoonector;
 	
 	public RegionDAO()
 	{
-		dbCoonector = new DBCoonector();
+		dbCoonector = new DBConnector();
 	}
 	
 	public int setInsert(RegionDTO rdto) throws Exception
