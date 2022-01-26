@@ -16,7 +16,7 @@ private DBConnector dbCoonector;
 	}
 	
 	public int setInsert(RegionDTO rdto) throws Exception
-	{
+	{			
 		//1.db연결
 		Connection con = dbCoonector.getConnection();
 		//2.sql query문 생성
