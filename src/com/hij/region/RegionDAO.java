@@ -12,13 +12,13 @@ private DBCoonector dbCoonector;
 	
 	public RegionDAO()
 	{
-		dbCoonector = new DBConnector();
+		dbCoonector = new DBCoonector();
 	}
 	
 	public int setInsert(RegionDTO rdto) throws Exception
 	{
 		//1.db연결
-		Connection con = dbconnector.getConnection();
+		Connection con = dbCoonector.getConnection();
 		//2.sql query문 생성
 		String sql = "INSERT INTO REGIONS(REGION_ID, REGION_NAME) VALUES(?, ?)";
 		//3.미리보내기
@@ -39,7 +39,7 @@ private DBCoonector dbCoonector;
 	
 	public int setDelete(RegionDTO rdto) throws ClassNotFoundException, SQLException
 	{
-		Connection con = dbconnector.getConnection();
+		Connection con = dbCoonector.getConnection();
 		String sql = "DELETE FROM REGIONS WHERE REGION_ID = ?";
 		PreparedStatement st = con.prepareStatement(sql);
 		st.setInt(1, rdto.getRegion_id());
@@ -53,7 +53,7 @@ private DBCoonector dbCoonector;
 	
 	public int setChange(int[] num) throws ClassNotFoundException, SQLException
 	{
-		Connection con = dbconnector.getConnection();
+		Connection con = dbCoonector.getConnection();
 		String sql = "UPDATE REGIONS SET REGION_ID = ? WHERE REGION_ID = ?";
 		PreparedStatement st = con.prepareStatement(sql);
 		st.setInt(1, num[1]);
